@@ -13,11 +13,11 @@ package lintcode.PacificOcean778;
 import java.util.*;
 
 /**
- * @Author ZhangXu
- * @Date 2018/8/11 15:29
- *
- * 从两个大海的边缘出发，分别BFS倒着找能流到的格子，求交集。
- */
+ *  @author ZhangXu
+ *  @date   2018/8/11 15:56
+ *  从两个大海的边缘出发，分别BFS倒着找能流到的格子，求交集。
+ *  广度优先搜索
+*/
 public class Solution {
 
     /**
@@ -44,7 +44,9 @@ public class Solution {
 
         boolean[][] pacific = new boolean[m][n];
         boolean[][] atlantic = new boolean[m][n];
+        //保存能到达太平样的节点
         Queue<int[]> pQueue = new LinkedList<>();
+        // 大西洋
         Queue<int[]> aQueue = new LinkedList<>();
 
         // push initial edge cells to queue
@@ -82,11 +84,13 @@ public class Solution {
             int[] cell = queue.poll();
             int x = cell[0], y = cell[1];
             for (int i = 0; i < DIRECTIONS; i++) {
-                int nx = x + dx[i];
-                int ny = y + dy[i];
-                if (nx >= 0 && nx < m && ny >= 0 && ny < n && !visited[nx][ny] && matrix[nx][ny] >= matrix[x][y]) {
-                    visited[nx][ny] = true;
-                    queue.offer(new int[]{nx, ny});
+                int nextX = x + dx[i];
+                int nextY = y + dy[i];
+                if (nextX >= 0 && nextX < m && nextY >= 0 && nextY < n
+                        && !visited[nextX][nextY]
+                        && matrix[nextX][nextY] >= matrix[x][y]) {
+                    visited[nextX][nextY] = true;
+                    queue.offer(new int[]{nextX, nextY});
                 }
             }
         }
