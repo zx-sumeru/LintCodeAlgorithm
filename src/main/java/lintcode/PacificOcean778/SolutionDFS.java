@@ -18,7 +18,7 @@ import java.util.List;
  * @Date 2018/8/11 15:25
  * 每一个格子做dfs, 如果resulttype 中foundAtlantic, foundPacific均为true, add to results
  */
-public class Solution1 {
+public class SolutionDFS {
     public static final int DIRECTIONS = 4;
 
     static class ResultType {

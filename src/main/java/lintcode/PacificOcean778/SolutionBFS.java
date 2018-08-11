@@ -15,10 +15,11 @@ import java.util.*;
 /**
  *  @author ZhangXu
  *  @date   2018/8/11 15:56
+ *
  *  从两个大海的边缘出发，分别BFS倒着找能流到的格子，求交集。
  *  广度优先搜索
 */
-public class Solution {
+public class SolutionBFS {
 
     /**
      *  DIRECTIONS 总方向数
@@ -46,7 +47,7 @@ public class Solution {
         boolean[][] atlantic = new boolean[m][n];
         //保存能到达太平样的节点
         Queue<int[]> pQueue = new LinkedList<>();
-        // 大西洋
+        // 保存能到达大西洋的节点
         Queue<int[]> aQueue = new LinkedList<>();
 
         // push initial edge cells to queue
