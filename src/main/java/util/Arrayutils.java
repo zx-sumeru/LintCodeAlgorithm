@@ -27,6 +27,11 @@ public class Arrayutils {
             System.out.printf("  " + matrix[i]);
         }
     }
+    public static void showArray( Integer[] matrix){
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.printf("  " + matrix[i]);
+        }
+    }
 
 
 }
