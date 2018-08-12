@@ -29,6 +29,11 @@ import java.util.Queue;
  Input: "Let's take LeetCode contest"
  Output: "s'teL ekat edoCteeL tsetnoc"
  */
+
+/**
+ * @author Zhang Xu
+ * @date 2018/8/12 下午3:33
+ */
 public class ReverseWordsInaString1173 {
 
 
@@ -56,9 +61,11 @@ public class ReverseWordsInaString1173 {
             index++;
         }
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i < wordQueue.size(); i++) {
+        //每次迭代会改变Queue.size ，因此应该将size提前保存
+        int queueSzie = wordQueue.size();
+        for (int i = 1; i <= queueSzie; i++) {
             result.append(invertWord(wordQueue.poll()));
-            if (i >= 0 || i< wordQueue.size() - 1){
+            if (i >= 1 && i <= queueSzie - 1){
                 result.append(" ");
             }
         }
@@ -74,7 +81,6 @@ public class ReverseWordsInaString1173 {
     }
 
     public static void main(String[] args) {
-        //System.out.println(invertWord("lets get up"));
         System.out.println(reverseWords("Lets get up"));
     }
 }

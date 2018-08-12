@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2018. All Rights Reserved.
  * ProjectName: LintCodeAlgorithm
- * FileName: Solution.java
+ * FileName: Solution780B.java
  * Author: ZhangXu
  * Date: 18-8-11 下午3:25
  * Version: 1.0.0
